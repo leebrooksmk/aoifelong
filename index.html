@@ -1,11 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paxel - Login</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    header {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+    }
+    .login-container {
+        width: 300px;
+        margin: 50px auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+        text-align: center;
+    }
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .login-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .login-container input[type="submit"]:hover {
+        background-color: #333;
+    }
+</style>
 </head>
 <body>
-   <h1>I SPY</h1>
-   <p>i spy with my little eye, something beginning with Y</p>
+
+<header>
+    <h1>Paxel</h1>
+</header>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // For simplicity, let's check the hardcoded credentials
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Check if the credentials are correct
+        if (username === "admin" && password === "1234") {
+            // Redirect to profile page
+            window.location.href = "profile.html";
+        } else {
+            // Alert for incorrect credentials (you can replace it with more user-friendly feedback)
+            alert("Invalid username or password. Please try again.");
+        }
+    });
+</script>
+
 </body>
 </html>
